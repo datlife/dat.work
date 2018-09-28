@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    background: darken(blue, 0.2);
+    color: whitesmoke;
+    font-size: calc(8px + 2vmin);
+    min-height: 5vh;
+    
+    .navbar {
+        list-style: none;
+        display: text;
+    }
+}
