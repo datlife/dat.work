@@ -1,12 +1,40 @@
 .header {
-    display: flex;
-    background: darken(blue, 0.2);
-    color: whitesmoke;
-    font-size: calc(8px + 2vmin);
-    min-height: 5vh;
-    
-    .navbar {
-        list-style: none;
-        display: text;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; // not flex-end, align text
+  position: sticky;
+
+  color: whitesmoke;
+  font-size: calc(8px + 2vmin);
+  padding: 2em 0 ;
+
+  &__logo-box{
+    margin-left: 5ch;
+  }
+
+  .brand {
+    &--sub{
+      font-weight: 400;
     }
+  }
+
+  .navbar {
+    margin-right: 2ch;
+    list-style: none;
+    li {
+      display: inline;
+      margin: 0 1vh;
+      &:hover{
+        color: yellow;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+    &:link, &:visited{
+      text-decoration: none;
+    }
+  }
 }
