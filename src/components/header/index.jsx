@@ -13,10 +13,8 @@ class Header extends Component {
         </div>
         <nav className="navbar">
           <ul>
-          <li className="navbar-item"><a href="/projects"><i className="fab fa-apple" /></a></li>
-            <li className="navbar-item"><a href="/about">About</a></li>
-            <li className="navbar-item"><a href="/projects">Projects</a></li>
-
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
           </ul>
          </nav>
       </header>
