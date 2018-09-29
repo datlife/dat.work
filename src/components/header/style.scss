@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline; // not flex-end, align text
+  align-items: baseline; // align text,  not flex-end.
   position: sticky;
 
   color: whitesmoke;
@@ -12,26 +12,26 @@
   }
 
   .brand {
+    &--main{
+      font-weight: 900;
+    }
     &--sub{
-      font-weight: 400;
+      font-weight: 200;
     }
   }
 
   .navbar {
     margin-right: 2ch;
-    list-style: none;
-    li {
-      display: inline;
-      margin: 0 1vh;
-      &:hover{
+      a:hover{
         color: yellow;
         text-decoration: underline;
       }
-    }
   }
 
   a {
     color: inherit;
+    margin: 0 1vh;
+
     &:link, &:visited{
       text-decoration: none;
     }
