@@ -1,10 +1,27 @@
-*, *::before, *::after{
+:root{
+  --color-dark-background: #282c34;
+  --color-dark-font: #fff;
+
+  --color-light-background: #eee;
+  --color-light-font: #111;
+
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: #282c34;
-  font-size: calc(8px + 2vmin);
+*::before, *::after{
+  box-sizing: inherit;
+}
 
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-dark-background);
+  font-size: 1.5rem; // calc(8px + 2vmin);
 }

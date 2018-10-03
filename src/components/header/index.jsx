@@ -5,13 +5,15 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <div className="header__logo-box">
-          <h2 className="brand">
-            <span className="brand--main"><a href="/">Dat | </a></span>
+        <div className="header__logo">
+          <h3 className="brand">
+          <a href="/">
+            <span className="brand--main">Dat|</span>
             <span className="brand--sub">Engineering</span>
-          </h2>
+          </a>
+          </h3>
         </div>
-        <nav className="navbar">
+        <nav className="header__nav-bar">
           <a href="/projects">Projects</a>
           <a href="/resume">Resume</a>
           <a href="/about">About</a>

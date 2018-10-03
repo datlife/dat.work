@@ -1,39 +1,34 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline; // align text,  not flex-end.
   position: sticky;
+  display: flex;
+  align-items: baseline; // align text,  not flex-end.
+  justify-content: space-between;
+  padding: 2em 0;
 
-  color: whitesmoke;
-  padding: 2em 0 ;
-
-  &__logo-box{
+  &__logo {
     margin-left: 5ch;
-  }
 
-  .brand {
-    &--main{
-      font-weight: 900;
-    }
-    &--sub{
-      font-weight: 200;
+    .brand{
+      &--main{font-weight: 900;}
+      &--sub{font-weight: 200;}
     }
   }
 
-  .navbar {
+  &__nav-bar {
     margin-right: 2ch;
-      a:hover{
-        color: yellow;
-        text-decoration: underline;
-      }
+    a:hover{
+      color: yellow;
+      // border-bottom: 1px solid white;
+      transform: translateY(5) !important;
+    }
   }
 
   a {
     color: inherit;
     margin: 0 1vh;
-
     &:link, &:visited{
       text-decoration: none;
     }
   }
 }
+
