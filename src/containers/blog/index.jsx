@@ -1,27 +1,30 @@
 import React, { Component } from 'react'
-import './style.scss'
 import Ghost from '../../api/ghost.api';
+import ArticleList from '../../components/articleList';
+import './style.scss'
 
-const URL = 'http://35.208.9.206/ghost/api/v0.1'
-const CLIENT_ID = 'ghost-frontend';
-const CLIENT_SECRET = 'ec2e9f4fefe0';
-
-const ghostAPI = new Ghost(URL, CLIENT_ID, CLIENT_SECRET);
-
+const ghostAPI = new Ghost();
 
 class Blog extends Component {
-  render() {
-    ghostAPI.get('posts', {
-        page: 1, 
-        limit: 3, 
-        absolute_urls: true,
-        fields: "slug,title,author,feature_image,published_at"})
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+  constructor(props) {
+    super(props);
+    this.state = {loading: true, currentPage: 1, page: null}
+  }
 
+  async componentDidMount() {
+    const page = await ghostAPI.getPage(this.state.currentPage)
+    this.setState({loading: false, currentPage: 1, page: page})
+  }
+
+  render() {
     return (
-      <div className="blog">
-        <h3>This is a Blog</h3>
+      <div className="blog container">
+        {this.state.loading ?
+          'Loading Blog...'
+          : this.state.page.posts?
+              <ArticleList articles={this.state.page.posts} />               
+          : 'Error'
+        }
       </div>
     )
   }

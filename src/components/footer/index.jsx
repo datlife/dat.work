@@ -5,7 +5,7 @@ class Footer extends Component {
   render(){
     return(
       <div className="footer">
-        <p>"Where is will, there is a way"</p>
+        <div className="quote">"Where is will, there is a way"</div>
       </div>
     )
   }

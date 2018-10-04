@@ -7,7 +7,10 @@
 
   &__logo {
     margin-left: 5ch;
-
+    a{
+      margin:0;
+      padding:0;
+    }
     .brand{
       &--main{font-weight: 900;}
       &--sub{font-weight: 200;}
@@ -16,19 +19,19 @@
 
   &__nav-bar {
     margin-right: 2ch;
-    a:hover{
-      color: yellow;
-      // border-bottom: 1px solid white;
-      transform: translateY(5) !important;
+    a{
+        margin: 0 1vh;
+        &:hover{
+          color: var(--color-primary-1);
+      }
     }
   }
-
   a {
     color: inherit;
-    margin: 0 1vh;
     &:link, &:visited{
       text-decoration: none;
     }
+
   }
 }
 

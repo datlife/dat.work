@@ -2,6 +2,7 @@ import React from 'react'
 
 class Article extends React.Component {
   render(){
+    let {title, featured_image, published_at , ...props} = props
     return(
       <div className="article">
         <div className="article-headline">
