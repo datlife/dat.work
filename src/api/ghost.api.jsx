@@ -18,9 +18,18 @@ class Ghost {
         limit: 3, 
         absolute_urls: true,
         filter: "author_id:1",
-        fields: "slug,title,feature_image,custom_excerpt,published_at"})
+        fields: "slug,id,title,feature_image,custom_excerpt,published_at"})
+    return page;
+  }
+
+  async getPost(postID){
+    const page = await this.get(`posts/${postID}/`,
+      { absolute_urls: true,
+        fields: "html,title,feature_image,custom_excerpt,published_at"})
     return page;
   }
 }
 
-export default Ghost;
+const ghostAPI = new Ghost();
+
+export default ghostAPI;

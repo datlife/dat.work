@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './style.scss'
 
 class ArticleList extends React.Component {
@@ -11,21 +12,29 @@ class ArticleList extends React.Component {
   }
   render() {
     let {articles} = this.props
+  
     return (
       <div className="articles-list">
       {articles.map(post => {
+        const location = {
+            pathname: `/blog/${post.slug}`, 
+            state: {postID: post.id}
+        }
         return (
-          <div className="article-preview" id={post.slug}>
-              <div className="article-preview--date">
-                  {this.formatDate(post.published_date)}
-              </div>
-              <div className="article-preview--description">
-                  <h2 className="title">{post.title}</h2>
-                  <p className="summary">{post.custom_excerpt}</p>
-              </div>
-              <div className="article-preview--feature_image">
-                  <img src={post.feature_image} alt="featured" className="img-fluid"/>
-              </div>
+          <div className="overview" key={post.slug}>
+            <div className="overview__date">
+              {this.formatDate(post.published_date)}
+            </div>
+            <div className="overview__description">
+              <Link to={location}
+                    className='overview__description--link'>
+                <h2 className="overview__description--title">{post.title}</h2>
+                <p className="overview__description--excerpt">{post.custom_excerpt}</p>
+              </Link>
+            </div>
+            <div className="overview__feature_image">
+              <img src={post.feature_image} alt="featured" className="img-fluid"/>
+            </div>
           </div>)
       })}
       </div>
