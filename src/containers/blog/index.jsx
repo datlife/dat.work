@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ghostAPI from '../../api/ghost.api';
-import ArticleList from '../../components/articleList';
+import ArticleOverviewList from '../../components/articleOverviewList';
 import './style.scss'
 
 class Blog extends Component {
@@ -13,14 +13,14 @@ class Blog extends Component {
     const page = await ghostAPI.getPage(this.state.currentPage)
     this.setState({loading: false, currentPage: 1, page: page})
   }
-
+  
   render() {
     return (
       <div className="blog container">
         {this.state.loading ?
           'Loading Blog...'
           : this.state.page.posts?
-              <ArticleList articles={this.state.page.posts}/>               
+              <ArticleOverviewList articles={this.state.page.posts}/>               
           : 'Error'
         }
       </div>

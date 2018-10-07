@@ -1,0 +1,32 @@
+.overview{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.01rem solid var(--color-primary);
+  padding: 1rem 0 1rem 0;
+  &__date{
+    flex: 0 0 10%;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  &__feature_image{
+    flex: 0 0 20%;
+    align-self: center; // y-axis
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__description{
+    flex: 0 1 65%;
+    &--title{ font-weight: 900;}
+    &--summary{font-weight: 400;}
+    &--link{
+      color: inherit;
+      &:active, &:visited{text-decoration: none;}
+      &:hover{
+        text-decoration: none;
+        color: var(--color-primary-1);
+      }
+    }
+  }
+}

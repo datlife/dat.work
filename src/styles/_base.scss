@@ -1,13 +1,13 @@
 :root{
-  --color-background: #eee;
-  --color-primary: #111;
-  --color-primary-1: rgb(90, 90, 90);
+  --color-background: #f7f7f7;
+  --color-primary: #333;
+  --color-primary-1: #143b6d;
 }
 
 .night-mode {
   --color-background: #282c34;
   --color-primary: #fff;
-  --color-primary-1: #ddd;
+  --color-primary-1: yellow;
 }
 
 
@@ -27,9 +27,8 @@ html {
 
 body {
   font-family: 'Lato', serif;
-  font-size: 1.5rem; // calc(8px + 2vmin);
+  font-size: 2rem; // calc(8px + 2vmin);
   font-weight: 400;
   background: var(--color-background);
   color: var(--color-primary);
-
 }

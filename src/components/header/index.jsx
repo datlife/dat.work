@@ -14,12 +14,18 @@ class Header extends Component {
           </h3>
         </div>
         <nav className="header__nav-bar">
-          <button className='btn night-mode-switch' 
-              onClick={(e) => {document.body.classList.toggle('night-mode')}}>
-              Night mode
+          <button className='btn btn-primary'
+              onClick={(e) => {
+                  document.body.classList.toggle('night-mode')
+                  document.body.classList.contains('night-mode') ?
+                    localStorage.setItem('night_mode', 1):
+                    localStorage.setItem('night_mode', 0)
+
+              }}>
+              Night Mode
           </button>
           <a href="/projects">Projects</a>
-          <a href="/resume">Resume</a>
+          {/* <a href="/resume">Resume</a> */}
           <a href="/about">About</a>
          </nav>
       </header>

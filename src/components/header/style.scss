@@ -2,16 +2,16 @@
   position: sticky;
   display: flex;
   align-items: baseline; // align text,  not flex-end.
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2em 0;
 
   &__logo {
-    margin-left: 5ch;
     a{
       margin:0;
       padding:0;
     }
     .brand{
+      font-size: 2.5rem;
       &--main{font-weight: 900;}
       &--sub{font-weight: 200;}
     }
@@ -19,10 +19,13 @@
 
   &__nav-bar {
     margin-right: 2ch;
+    display: flex;
+    align-items: baseline;
     a{
-        margin: 0 1vh;
-        &:hover{
-          color: var(--color-primary-1);
+      margin: 0 1vh;
+      &:hover{
+        font-weight: 600;
+        color: var(--color-primary-1);
       }
     }
   }
@@ -31,7 +34,6 @@
     &:link, &:visited{
       text-decoration: none;
     }
-
   }
 }
 
